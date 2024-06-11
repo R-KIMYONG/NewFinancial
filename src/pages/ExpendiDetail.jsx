@@ -3,16 +3,17 @@ import { useNavigate, useParams } from "react-router-dom";
 import { nanoid } from "nanoid";
 import * as S from "@StyledComponents/ExpendiDetail.jsx";
 import { useDispatch, useSelector } from "react-redux";
-import { handleUpdate, handleDelete } from "../store/config/configStore";
+import { handleUpdate, handleDelete } from "../redux/slices/expensesSlice";
+
 const ExpendiDetail = () => {
   const expenses = useSelector((state) => state.expenses);
   const categoryList = useSelector((state) => state.categoryList);
   const navigate = useNavigate();
   const { id } = useParams();
-  const dateRef =useRef()
-  const categoryRef =useRef()
-  const contentRef =useRef()
-  const amountRef =useRef()
+  const dateRef = useRef();
+  const categoryRef = useRef();
+  const contentRef = useRef();
+  const amountRef = useRef();
   const expense = expenses.find((item) => item.id === id);
   const dispatch = useDispatch();
   const handleUpdateBtn = () => {

@@ -1,10 +1,11 @@
-import React, { useState, useContext, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import * as S from "@StyledComponents/Formstyle.jsx";
 import { v4 as uuidv4 } from "uuid";
 import AddInputs from "@components/AddInputs.jsx";
 import Monthlist from "@components/Monthlist.jsx";
 import { useDispatch, useSelector } from "react-redux";
-import { setExpenses } from "../store/config/configStore";
+import { setExpenses } from "../redux/slices/expensesSlice";
+import Header from "./Header";
 
 const Addform = () => {
   const activeIndex = useSelector((state) => state.activeIndex);
@@ -77,6 +78,7 @@ const Addform = () => {
 
   return (
     <>
+      <Header />
       <div id="main">
         <S.Fromsubmit onSubmit={handleAddForm}>
           {[...Object.entries(inputs)]

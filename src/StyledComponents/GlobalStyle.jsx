@@ -8,7 +8,9 @@ export const GlobalStyle = createGlobalStyle`
   font-weight: 300;
   font-style: normal;
   background:cornsilk;
+  
   }
   #main{width:1200px;margin:0px auto;}
+  a{color:#000;}
   
 `;

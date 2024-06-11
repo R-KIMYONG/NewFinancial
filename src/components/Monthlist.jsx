@@ -3,7 +3,7 @@ import * as S from "@StyledComponents/Monthstyle.jsx";
 import Totalex from "@components/Totalex.jsx";
 import ExpenditureItem from "@components/ExpenditureItem.jsx";
 import { useDispatch, useSelector } from "react-redux";
-import { setActiveIndex } from "../store/config/configStore";
+import { setActiveIndex } from "../redux/slices/activeIndexSlice";
 
 const Monthlist = ({ setInputs }) => {
   const activeIndex = useSelector((state) => state.activeIndex);

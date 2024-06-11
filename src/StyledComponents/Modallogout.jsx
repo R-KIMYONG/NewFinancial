@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 
-export const ModalContent = styled.div`
+export const Modallogout = styled.div`
   h2 {
     margin-bottom: 20px;
     font-size: 24px;

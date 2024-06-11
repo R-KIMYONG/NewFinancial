@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { authApi } from "../axios/\bauthApi";
-import * as S from "../StyledComponents/LoginSignin.styled";
+import { authApi } from "../axios/authApi";
+import * as S from "@/styledComponents/LoginSignin.styled";
 import { toast } from "react-toastify";
 const Signup = () => {
   const [userId, setUserId] = useState("");

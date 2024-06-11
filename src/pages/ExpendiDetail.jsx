@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { nanoid } from "nanoid";
-import * as S from "@StyledComponents/ExpendiDetail.jsx";
+import * as S from "@/styledComponents/ExpendiDetail.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { handleUpdate, handleDelete } from "../redux/slices/expensesSlice";
 

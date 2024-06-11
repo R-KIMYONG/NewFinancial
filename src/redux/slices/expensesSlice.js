@@ -6,7 +6,6 @@ const expensesSlice = createSlice({
   initialState: JSON.parse(localStorage.getItem("mylocalData")) || fakeData,
   reducers: {
     setExpenses(state, action) {
-      //   console.log(action.payload);
       const newState = [...state, action.payload]; //기존데이터랑 추가한데이터를 가져와서!
       localStorage.setItem("mylocalData", JSON.stringify(newState)); //로컬스토리지에 저장해야한다.
       return newState;
@@ -36,3 +35,4 @@ export const { setExpenses, handleUpdate, handleDelete } =
   expensesSlice.actions;
 
 export default expensesSlice.reducer;
+``

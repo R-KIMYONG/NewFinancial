@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import * as S from "@StyledComponents/Monthstyle.jsx";
+import * as S from "@/styledComponents/Monthstyle.jsx";
 import Totalex from "@components/Totalex.jsx";
 import ExpenditureItem from "@components/ExpenditureItem.jsx";
 import { useDispatch, useSelector } from "react-redux";

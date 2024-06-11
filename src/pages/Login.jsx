@@ -2,9 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { authApi } from "../axios/\bauthApi";
+import { authApi } from "../axios/authApi";
 import { userLogin } from "../redux/slices/userSlice";
-import * as S from "../StyledComponents/LoginSignin.styled";
+import * as S from "@/styledComponents/LoginSignin.styled";
 import { toast } from "react-toastify";
 
 const Login = () => {

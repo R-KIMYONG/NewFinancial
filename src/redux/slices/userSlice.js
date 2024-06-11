@@ -9,7 +9,6 @@ const userSlice = createSlice({
   reducers: {
     userLogin(state, action) {
       const token = action.payload;
-
       localStorage.setItem("accessToken", token);
       state.isAuthenticated = true;
     },

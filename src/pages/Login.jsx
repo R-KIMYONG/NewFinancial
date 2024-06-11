@@ -35,8 +35,7 @@ const Login = () => {
         notify("Login failed");
       }
     } catch (error) {
-      console.error("Login error:", error);
-      notify("Login failed");
+      notify(error);
     }
   };
   return (

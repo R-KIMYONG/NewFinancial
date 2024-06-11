@@ -1,8 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+const initialState = {
+  isAuthenticated: !!localStorage.getItem("accessToken"),
+};
 
 const userSlice = createSlice({
   name: "user",
-  initialState: { isAuthenticated: false },
+  initialState,
   reducers: {
     userLogin(state, action) {
       const token = action.payload;

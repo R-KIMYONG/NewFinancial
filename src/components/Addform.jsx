@@ -81,7 +81,7 @@ const Addform = () => {
       <Header />
       <div id="main">
         <S.Fromsubmit onSubmit={handleAddForm}>
-          {[...Object.entries(inputs)]
+          {[...Object.entries(inputs)] 
             .filter(([key]) => key !== "id")
             .map(([item, value], index) => (
               <AddInputs

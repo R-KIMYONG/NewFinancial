@@ -38,7 +38,6 @@ const Addform = () => {
     dispatch(setExpenses(newExpenses));
     resetAddform();
   });
-  console.log()
   const checkInput = () => {
     const newError = {};
     if (inputs.date.slice(-1) === "") newError["date"] = "날짜를 입력하세요.";

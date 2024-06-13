@@ -5,7 +5,7 @@ import { notifyError } from "../util/toast";
 import { expensesApi } from "./expenseApi";
 
 export const authApi = axios.create({
-  baseURL: "https://moneyfulpublicpolicy.co.kr/",
+  baseURL: "https://moneyfulpublicpolicy.co.kr",
 });
 
 export const getUserInfo = async () => {

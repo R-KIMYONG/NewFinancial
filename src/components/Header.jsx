@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import * as S from "../Styledcomponents/Header.jsx";
+import * as S from "../StyledComponents/Header.jsx";
 import logo from "./../assets/logo.png";
 import no_img from "./../assets/no_img.jpg";
 import { Link } from "react-router-dom";
@@ -7,9 +7,9 @@ import Modal from "react-modal";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "./../redux/slices/authSlice.js";
 import { customStyles } from "./../styles/modalStyles.js";
-import { Modallogout } from "../Styledcomponents/Modallogout.jsx";
+import { Modallogout } from "../StyledComponents/Modallogout.jsx";
 import { authApi } from "./../axios/authApi.js";
-import { Modaledit } from "../Styledcomponents/Modaledit.jsx";
+import { Modaledit } from "../StyledComponents/Modaledit.jsx";
 import { updateUserInfo } from "./../redux/slices/userSlice.js";
 import { notifySuccess } from "./../util/toast.js";
 

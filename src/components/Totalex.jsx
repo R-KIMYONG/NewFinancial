@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import * as S from "../Styledcomponents/Totalamount.jsx";
+import * as S from "../StyledComponents/Totalamount.jsx";
 import TotalexLi from "./../components/TotalexLi";
 import TotalGraph from "./../components/TotalGraph";
 import { useSelector } from "react-redux";

@@ -1,4 +1,4 @@
-import * as S from "../Styledcomponents/Expenditurestyle.jsx";
+import * as S from "../StyledComponents/Expenditurestyle.jsx";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";

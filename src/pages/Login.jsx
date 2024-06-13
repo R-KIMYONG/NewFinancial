@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { authApi } from "./../axios/authApi.js";
 import { login } from "./../redux/slices/authSlice.js";
-import { Loginsignup } from "../Styledcomponents/Loginsignin";
+import { Loginsignup } from "../StyledComponents/Loginsignin";
 import { toast } from "react-toastify";
 import { setUserInfo } from "./../redux/slices/userSlice.js";
 

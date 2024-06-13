@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./../pages/Login.jsx";
-import Signup from "./../pages/Signup.js";
+import Signup from "./../pages/Signup.jsx";
 import ExpendiDetail from "./../pages/ExpendiDetail.jsx";
 import Addform from "./../components/Addform.jsx";
-import PrivateRoute from "./PrivateRoute";
-import PublicRoute from "./PublicRoute";
+import PrivateRoute from "./PrivateRoute.jsx";
+import PublicRoute from "./PublicRoute.jsx";
 
 const SharedRouter = () => (
   <>

@@ -5,7 +5,7 @@ import { authApi } from "./../axios/authApi.js";
 
 import { useSelector } from "react-redux";
 import { notifyError, notifySuccess } from "./../util/toast.js";
-import { LoginSignup } from "../styledComponents/LoginSignin.jsx";
+import { LoginSignup } from "../styledComponents/Loginsignin.jsx";
 const Signup = () => {
   const [userId, setUserId] = useState("");
   const [userPassWord, setUserPassword] = useState("");

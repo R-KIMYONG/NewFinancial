@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as S from "../styledComponents/Formstyle";
+import * as S from "./../styledComponents/Formstyle";
 import { v4 as uuidv4 } from "uuid";
 import Monthlist from "../components/Monthlist";
 import AddInputs from "./AddInputs";

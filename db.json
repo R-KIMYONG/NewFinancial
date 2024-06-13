@@ -1,0 +1,94 @@
+{
+  "expenses": [
+    {
+      "id": "46869445-5f9c-4650-941f-41bd9457bc07",
+      "date": "2024-01-03",
+      "category": "개인사업",
+      "amount": 1000000,
+      "content": "테슬라 모델 3",
+      "createdBy": "Musk"
+    },
+    {
+      "id": "a5c0d8de-d010-4d07-9934-29765051a7ea",
+      "date": "2024-01-07",
+      "category": "개인사업",
+      "amount": 1000,
+      "content": "X(구 트위터)",
+      "createdBy": "Musk"
+    },
+    {
+      "id": "0d0a966e-5c35-4bf0-aca4-f2b1265a432d",
+      "date": "2024-01-13",
+      "category": "식비",
+      "amount": 2000,
+      "content": "메가커피",
+      "createdBy": "Rosie"
+    },
+    {
+      "id": "9aba6d72-5ee7-4f02-a4d4-e8bbff9ded4b",
+      "date": "2024-01-17",
+      "category": "식비",
+      "amount": 21000,
+      "content": "대광참치",
+      "createdBy": "Rosie"
+    },
+    {
+      "id": "b82b213e-8164-4c89-94b0-7246cdcfc4f9",
+      "date": "2024-01-21",
+      "category": "식비",
+      "amount": 412000,
+      "content": "BBQ",
+      "createdBy": "Me"
+    },
+    {
+      "id": "d180194f-7c27-428a-8cd9-ad9114e58821",
+      "date": "2024-01-22",
+      "category": "도서",
+      "amount": 23000,
+      "content": "리액트 마스터",
+      "createdBy": "Me"
+    },
+    {
+      "id": "5716210c-38b0-4511-b774-e31fa4cb46b8"
+    },
+    {
+      "id": "16d7dc10-9001-4995-94d7-f41da846fe47"
+    },
+    {
+      "id": "4b45a45c-0ef2-4dce-86ab-a913b8078182"
+    },
+    {
+      "id": "037a0684-42b3-4d6b-8af5-161dd8397832"
+    },
+    {
+      "id": "3da93ff1-6fbe-4c5e-80ba-95c7c05b9351"
+    },
+    {
+      "id": "1e1aecb1-3c5c-41fd-acbd-32be90ef8cb7"
+    },
+    {
+      "id": "b7e2eb42-03ab-4e32-a0d7-25ecb5bed7f8",
+      "date": "2024-02-01",
+      "category": "ew",
+      "amount": 1111,
+      "content": "1",
+      "createdBy": "rladyd1"
+    },
+    {
+      "id": "8df76e75-9c1f-495e-a940-82bbb964d3d3",
+      "date": "2024-02-01",
+      "category": "wef",
+      "amount": 123,
+      "content": "fwef",
+      "createdBy": "rladyd2"
+    },
+    {
+      "id": "09e089f3-0a64-4e7b-a1e8-c24055b453f1",
+      "date": "2024-09-01",
+      "category": "wef",
+      "amount": 111,
+      "content": "wef",
+      "createdBy": "rladyd1"
+    }
+  ]
+}

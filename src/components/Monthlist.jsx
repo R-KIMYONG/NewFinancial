@@ -11,7 +11,7 @@ const Monthlist = ({ setInputs }) => {
   //안쓰는값은 _으로 대체함 1~12까지의 array를 생성함
   const months = Array.from({ length: 12 }, (_, index) => index + 1); 
 
-  const handleClick = (index) => {
+  const handleClickMonthTap = (index) => {
     const clickedMonth = `2024-${String(index + 1).padStart(2, "0")}-01`;
     setInputs((prev) => ({
       ...prev,
@@ -32,7 +32,7 @@ const Monthlist = ({ setInputs }) => {
             id={item.id}
             $active={activeIndex === index}
             onClick={() => {
-              handleClick(index);
+              handleClickMonthTap(index);
             }}
           >
             {item}월

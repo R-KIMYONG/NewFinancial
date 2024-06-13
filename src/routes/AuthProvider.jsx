@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Login from "../pages/Login";
-import Signup from "../pages/Signup";
-import ExpendiDetail from "../pages/ExpendiDetail";
-import Addform from "../components/Addform";
+import Login from "./../pages/Login.jsx";
+import Signup from "./../pages/Signup.js";
+import ExpendiDetail from "./../pages/ExpendiDetail.jsx";
+import Addform from "./../components/Addform.jsx";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 

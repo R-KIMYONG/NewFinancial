@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import * as S from "./../styledComponents/Formstyle";
+import * as S from "./../styledComponents/Formstyle.jsx";
 import { v4 as uuidv4 } from "uuid";
-import Monthlist from "../components/Monthlist";
-import AddInputs from "./AddInputs";
+import Monthlist from "./../components/Monthlist.jsx";
+import AddInputs from "./AddInputs.jsx";
 import { useSelector } from "react-redux";
-import { addExpense, getExpenseList } from "../axios/expenseApi";
+import { addExpense, getExpenseList } from "./../axios/expenseApi.js";
 import { useMutation, useQueryClient, useQuery } from "@tanstack/react-query";
-import { getUserInfo } from "../axios/authApi";
-import { notifyError, notifySuccess } from "../util/toast";
+import { getUserInfo } from "./../axios/authApi.js";
+import { notifyError, notifySuccess } from "./../util/toast.js";
 const Addform = () => {
   const activeIndex = useSelector((state) => state.activeIndex);
   const [inputs, setInputs] = useState({

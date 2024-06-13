@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import * as S from "../styledComponents/Monthstyle";
-import Totalex from "./Totalex";
-import ExpenditureItem from "./ExpenditureItem";
+import * as S from "./../styledComponents/Monthstyle.jsx";
+import Totalex from "./Totalex.jsx";
+import ExpenditureItem from "./ExpenditureItem.jsx";
 import { useDispatch, useSelector } from "react-redux";
-import { setActiveIndex } from "../redux/slices/activeIndexSlice";
+import { setActiveIndex } from "./../redux/slices/activeIndexSlice.js";
 
 const Monthlist = ({ setInputs }) => {
   const activeIndex = useSelector((state) => state.activeIndex);

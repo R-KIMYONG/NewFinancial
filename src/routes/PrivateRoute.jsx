@@ -2,9 +2,9 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate, Outlet } from "react-router-dom";
-import { getUserInfo } from "../axios/authApi";
-import Header from "../components/Header";
-import { setUserInfo } from "../redux/slices/userSlice";
+import { getUserInfo } from "./../axios/authApi.js";
+import Header from "./../components/Header.jsx";
+import { setUserInfo } from "./../redux/slices/userSlice.js";
 
 const PrivateRoute = () => {
   const { isAuthenticated } = useSelector((state) => state.auth);

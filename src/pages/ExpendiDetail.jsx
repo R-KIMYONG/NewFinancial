@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { nanoid } from "nanoid";
-import * as S from "../styledComponents/ExpendiDetail";
+import * as S from "./../styledComponents/ExpendiDetail.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import { useQuery } from "@tanstack/react-query";
 import {

@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import activeIndexSlice from "../slices/activeIndexSlice";
-import authSlice from "../slices/authSlice";
-import categoryListSlice from "../slices/categoryListSlice";
-import userSlice from "../slices/userSlice";
+import activeIndexSlice from "./../slices/activeIndexSlice.js";
+import authSlice from "./../slices/authSlice.js";
+import categoryListSlice from "./../slices/categoryListSlice.js";
+import userSlice from "./../slices/userSlice.js";
 
 const store = configureStore({
   reducer: {

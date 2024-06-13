@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from "../styledComponents/Formstyle";
+import * as S from "./../styledComponents/Formstyle.jsx";
 import { useCallback } from "react";
 import { useSelector } from "react-redux";
 const AddInputs = ({ item, value, setInputs }) => {

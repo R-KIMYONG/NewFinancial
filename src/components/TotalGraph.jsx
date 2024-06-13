@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from "../styledComponents/Totalamount";
+import * as S from "./../styledComponents/Totalamount.jsx";
 const TotalGraph = ({ categoryItem, getCategoryTotal, totalAmount }) => {
   return (
     <>

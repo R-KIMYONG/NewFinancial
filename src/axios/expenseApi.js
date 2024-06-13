@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const expensesApi = axios.create({
-  baseURL: "http://localhost:5012/",
+  baseURL: "https://chlorinated-wax-wisteria.glitch.me/",
 });
 
 export const getExpenseList = async () => {

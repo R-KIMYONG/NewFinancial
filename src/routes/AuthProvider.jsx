@@ -5,11 +5,11 @@ import ExpendiDetail from "../pages/ExpendiDetail";
 import Addform from "../components/Addform";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
-import { GlobalStyle } from "../styledComponents/GlobalStyle";
+// import { GlobalStyle } from "../styledComponents/GlobalStyle";
 
 const SharedRouter = () => (
   <>
-    <GlobalStyle />
+    {/* <GlobalStyle /> */}
     <Router>
       <Routes>
         <Route path="/login" element={<PublicRoute />}>

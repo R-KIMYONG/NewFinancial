@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import reset from "styled-reset";
+// import reset from "styled-reset";
 export const GlobalStyle = createGlobalStyle`
-  ${reset}
+  /* ${reset} */
   body{
     
     font-family: "Jua", sans-serif;
@@ -10,6 +10,8 @@ export const GlobalStyle = createGlobalStyle`
   background:cornsilk;
   
   }
+  *{margin:0px;padding:0px;}
+  li{list-style:none;}
   #main{width:1200px;margin:0px auto;}
   a{color:#000;}
   

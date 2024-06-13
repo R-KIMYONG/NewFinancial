@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { authApi } from "../axios/authApi";
 import { login } from "../redux/slices/authSlice";
-import * as S from "../StyledComponents/LoginSignin.styled";
+import * as S from "../StyledComponents/LoginSignin";
 import { toast } from "react-toastify";
 import { setUserInfo } from "./../redux/slices/userSlice.js";
 
@@ -44,7 +44,7 @@ const Login = () => {
     }
   };
   return (
-    <Loginsignup>
+    <S.Loginsignup>
       <h1>Welcome</h1>
       <form onSubmit={handleSubmit}>
         <div>
@@ -76,7 +76,7 @@ const Login = () => {
           아직 우리 식구 아니란 말인가? <Link to="signup">회원가입</Link>
         </p>
       </div>
-    </Loginsignup>
+    </S.Loginsignup>
   );
 };
 

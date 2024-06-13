@@ -2,10 +2,9 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authApi } from "../axios/authApi";
-import * as S from "../StyledComponents/LoginSignin.styled";
+import * as S from "../StyledComponents/LoginSignin";
 import { useSelector } from "react-redux";
 import { notifyError, notifySuccess } from "./../util/toast.js";
-import { Loginsignup } from "../StyledComponents/Loginsignin.jsx";
 const Signup = () => {
   const [userId, setUserId] = useState("");
   const [userPassWord, setUserPassword] = useState("");
@@ -56,7 +55,7 @@ const Signup = () => {
     return false;
   };
   return (
-    <Loginsignup>
+    <S.Loginsignup>
       <h1>회원가입</h1>
       <form onSubmit={handleSubmit}>
         <div>
@@ -108,7 +107,7 @@ const Signup = () => {
       <div className="signup">
         <Link to="/login">로그인하러 하기</Link>
       </div>
-    </Loginsignup>
+    </S.Loginsignup>
   );
 };
 

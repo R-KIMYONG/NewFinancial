@@ -5,7 +5,7 @@ import { authApi } from "./../axios/authApi.js";
 
 import { useSelector } from "react-redux";
 import { notifyError, notifySuccess } from "./../util/toast.js";
-import { LoginSignup } from "../styledComponents/Loginsignin.jsx";
+import { Loginsignup } from "../styledcomponents/Loginsignin.jsx";
 const Signup = () => {
   const [userId, setUserId] = useState("");
   const [userPassWord, setUserPassword] = useState("");
@@ -56,7 +56,7 @@ const Signup = () => {
     return false;
   };
   return (
-    <LoginSignup>
+    <Loginsignup>
       <h1>회원가입</h1>
       <form onSubmit={handleSubmit}>
         <div>
@@ -108,7 +108,7 @@ const Signup = () => {
       <div className="signup">
         <Link to="/login">로그인하러 하기</Link>
       </div>
-    </LoginSignup>
+    </Loginsignup>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from "./../styledComponents/Formstyle.jsx";
+import * as S from "../styledcomponents/Formstyle.jsx";
 import { useCallback } from "react";
 import { useSelector } from "react-redux";
 const AddInputs = ({ item, value, setInputs }) => {
@@ -27,9 +27,7 @@ const AddInputs = ({ item, value, setInputs }) => {
 
   return (
     <S.Formdiv>
-      <S.Formlabel htmlFor="date">
-        {categoryList[item].label}
-      </S.Formlabel>
+      <S.Formlabel htmlFor="date">{categoryList[item].label}</S.Formlabel>
       <S.Forminput
         type={categoryList[item].type}
         value={value}

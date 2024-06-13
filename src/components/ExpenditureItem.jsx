@@ -39,6 +39,7 @@ const ExpenditureItem = () => {
       });
   };
   const filteredExpenses = newExpenses();
+  
   if (isLoading) {
     return <div>데이터를 불러오는 중입니다...</div>;
   }
@@ -62,7 +63,7 @@ const ExpenditureItem = () => {
               <br />
               <p className="light-blue">
                 {item.category} - {item.content} - ( 작성자 :{" "}
-                {item.createdBy || "unknow"} )
+                {item.createdBy || "unknown"} )
               </p>
             </div>
             <div className="price-info">

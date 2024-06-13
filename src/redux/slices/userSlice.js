@@ -19,7 +19,19 @@ const userSlice = createSlice({
       return updatedUserInfo;
     },
     updateUserInfo(state, action) {
-      return { ...state, ...action.payload };
+      const { newAvatar, nickname } = action.payload;
+
+      const updatedState = { ...state };
+      if (newAvatar) updatedState.avatar = newAvatar;
+      if (nickname) updatedState.nickname = nickname;
+      const updatedUserInfo = {
+        ...userInfo,
+        avatar: newAvatar || userInfo.avatar,
+        nickname: nickname || userInfo.nickname,
+      };
+      localStorage.setItem("userInfo", JSON.stringify(updatedUserInfo));
+
+      return updatedState;
     },
   },
 });

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import * as S from "../StyledComponents/Header"
+import * as S from "../StyledComponents/Header";
 import logo from "../assets/logo.png";
 import no_img from "../assets/no_img.jpg";
 import { Link } from "react-router-dom";
@@ -44,18 +44,16 @@ const Header = () => {
     dispatch(logout());
     closeModal();
   };
-
   const upLoadAvatarsBtn = async (e) => {
     e.preventDefault();
     try {
       const formData = new FormData();
-      if (avatarFile) {
-        formData.append("avatar", avatarFile);
-      }
 
       if (nickname.trim() === "") {
         notifyError("뭐라도 입력해주세요!");
+        return;
       }
+      formData.append("avatar", avatarFile);
       formData.append("nickname", nickname);
       const token = localStorage.getItem("accessToken");
       const { data } = await authApi.patch("/profile", formData, {
@@ -64,8 +62,8 @@ const Header = () => {
           Authorization: `Bearer ${token}`,
         },
       });
-      dispatch(updateUserInfo(data));
-      localStorage.setItem("userInfo", JSON.stringify(data));
+      dispatch(updateUserInfo({ newAvatar, nickname }));
+      // localStorage.setItem("userInfo", JSON.stringify(data));
       closeModal();
       notifySuccess("변경 완료");
     } catch (error) {

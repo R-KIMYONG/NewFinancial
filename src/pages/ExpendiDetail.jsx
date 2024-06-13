@@ -12,10 +12,12 @@ import {
 import { useMutation } from "@tanstack/react-query";
 import { getUserInfo } from "../axios/authApi";
 import { setUserInfo } from "../redux/slices/userSlice";
+import { notifyError } from "../util/toast";
 
 const ExpendiDetail = () => {
   // const expenses = useSelector((state) => state.expenses);
   const categoryList = useSelector((state) => state.categoryList);
+  const userInfo = useSelector((state) => state.user);
   const navigate = useNavigate();
   const { id } = useParams();
   const dateRef = useRef();
@@ -31,7 +33,6 @@ const ExpendiDetail = () => {
     queryKey: ["expenses", id],
     queryFn: getExpenseById,
   });
-
   const mutationEdit = useMutation({
     mutationFn: updatedExpense,
     onSuccess: () => {
@@ -52,19 +53,19 @@ const ExpendiDetail = () => {
     try {
       const sessions = await getUserInfo();
       if (sessions.success) {
-        dispatch(setUserInfo(sessions));
+        // dispatch(setUserInfo(sessions));
         if (isNaN(amountRef.current.value)) {
-          alert("금액은 숫자으로만 수정가능합니다.");
+          notifyError("금액은 숫자으로만 수정가능합니다.");
           return;
         }
         const updateExpense = {
           id,
+          createdBy: userInfo.id,
           date: dateRef.current.value,
           category: categoryRef.current.value,
           amount: amountRef.current.value,
           content: contentRef.current.value,
         };
-
         mutationEdit.mutate(updateExpense);
       }
     } catch (error) {
@@ -75,7 +76,7 @@ const ExpendiDetail = () => {
     try {
       const sessions = await getUserInfo();
       if (sessions.success) {
-        dispatch(setUserInfo(sessions));
+        // dispatch(setUserInfo(sessions));
         mutationDelete.mutate(id);
       }
     } catch (error) {

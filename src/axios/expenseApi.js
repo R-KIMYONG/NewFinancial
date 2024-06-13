@@ -16,7 +16,7 @@ export const getExpenseList = async () => {
 
 export const addExpense = async (newExpexse) => {
   try {
-    const { data } = expensesApi.post("expenses", newExpexse);
+    const { data } = await expensesApi.post("expenses", newExpexse);
     return data;
   } catch (error) {
     console.log(error);
@@ -24,9 +24,10 @@ export const addExpense = async (newExpexse) => {
 };
 
 export const updatedExpense = async (updateditem) => {
-  const { id, ...rest } = updateditem;
+  const { id ,...rest } = updateditem;
+
   try {
-    const { data } = expensesApi.put(`expenses/${id}`, rest);
+    const { data } = await expensesApi.put(`expenses/${id}`, rest);
     return data;
   } catch (error) {
     console.log(error);
@@ -44,7 +45,7 @@ export const getExpenseById = async ({ queryKey }) => {
 
 export const deleteExpense = async (id) => {
   try {
-    const { data } = expensesApi.put(`expenses/${id}`);
+    const { data } = await expensesApi.put(`expenses/${id}`);
     return data;
   } catch (error) {
     console.log(error);

@@ -1,12 +1,13 @@
-import React, { useState, useCallback } from "react";
-import * as S from "@StyledComponents/Formstyle.jsx";
+import React, { useState } from "react";
+import * as S from "@/styledComponents/Formstyle.jsx";
 import { v4 as uuidv4 } from "uuid";
 import AddInputs from "@components/AddInputs.jsx";
 import Monthlist from "@components/Monthlist.jsx";
-import { useDispatch, useSelector } from "react-redux";
-import { setExpenses } from "../redux/slices/expensesSlice";
-import Header from "./Header";
-
+import { useSelector } from "react-redux";
+import { addExpense, getExpenseList } from "../axios/expenseApi";
+import { useMutation, useQueryClient, useQuery } from "@tanstack/react-query";
+import { getUserInfo } from "../axios/authApi";
+import { notifyError, notifySuccess } from "../util/toast";
 const Addform = () => {
   const activeIndex = useSelector((state) => state.activeIndex);
   const [inputs, setInputs] = useState({
@@ -17,28 +18,48 @@ const Addform = () => {
     content: "",
   });
   const [error, setError] = useState({});
+  const queryClient = useQueryClient();
 
-  const dispatch = useDispatch();
+  const { refetch } = useQuery({
+    queryKey: ["expenses"],
+    queryFn: getExpenseList,
+    cachetime: 30000,
+    staleTime: 100000,
+  });
+  const { mutate } = useMutation({
+    mutationFn: addExpense,
+    onSuccess: () => {
+      queryClient.invalidateQueries(["expenses"]);
+      refetch();
+    },
+  });
 
-  const handleAddForm = useCallback((e) => {
+  const handleAddForm = async (e) => {
     e.preventDefault();
-
     if (checkInput()) {
       resetAddform();
       return;
     }
-    const newExpenses = {
-      id: uuidv4(),
-      date: inputs.date,
-      category: inputs.category,
-      amount: inputs.amount,
-      content: inputs.content,
-    };
-
-    dispatch(setExpenses(newExpenses));
-    resetAddform();
-  });
-
+    try {
+      const sessions = await getUserInfo();
+      if (sessions.success) {
+        // dispatch(setUserInfo(sessions));
+        const newExpenses = {
+          id: uuidv4(),
+          date: inputs.date,
+          category: inputs.category,
+          amount: Number(inputs.amount),
+          content: inputs.content,
+          createdBy: sessions.id,
+        };
+        mutate(newExpenses);
+        resetAddform();
+        notifySuccess("지출 추가 완료");
+      }
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
   const checkInput = () => {
     const newError = {};
     if (inputs.date.slice(-1) === "") newError["date"] = "날짜를 입력하세요.";
@@ -57,7 +78,8 @@ const Addform = () => {
     setError(newError);
 
     if (Object.keys(newError).length > 0) {
-      alert(Object.values(newError).join("\n"));
+      const errorMessage = Object.values(newError)
+      notifyError(errorMessage);
       return true;
     }
 
@@ -78,10 +100,9 @@ const Addform = () => {
 
   return (
     <>
-      <Header />
       <div id="main">
         <S.Fromsubmit onSubmit={handleAddForm}>
-          {[...Object.entries(inputs)] 
+          {[...Object.entries(inputs)]
             .filter(([key]) => key !== "id")
             .map(([item, value], index) => (
               <AddInputs

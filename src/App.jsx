@@ -1,5 +1,5 @@
 import "./App.css";
-import { GlobalStyle } from "@StyledComponents/GlobalStyle.jsx";
+import { GlobalStyle } from "@/styledComponents/GlobalStyle.jsx";
 import SharedRouter from "./routes/AuthProvider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <>
-      <ToastContainer autoClose={2000}/>
+      <ToastContainer autoClose={1500}/>
       <SharedRouter />
       <GlobalStyle />
       {/* <BrowserRouter>

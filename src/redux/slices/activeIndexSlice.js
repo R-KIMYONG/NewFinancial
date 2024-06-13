@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const activeIndexSlice = createSlice({
   name: "activeIndex",
   initialState:
-    JSON.parse(localStorage.getItem("monthIndex")) || new Date().getMonth() + 1,
+    JSON.parse(localStorage.getItem("monthIndex")) || new Date().getMonth() ,
   reducers: {
     setActiveIndex(state, action) {
       // console.log(action.payload)

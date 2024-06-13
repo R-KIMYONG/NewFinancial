@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import * as S from "@/styledComponents/Formstyle.jsx";
+import * as S from "../styledComponents/Formstyle";
 import { v4 as uuidv4 } from "uuid";
-import AddInputs from "@components/AddInputs.jsx";
-import Monthlist from "@components/Monthlist.jsx";
+import Monthlist from "../components/Monthlist";
+import AddInputs from "./AddInputs";
 import { useSelector } from "react-redux";
 import { addExpense, getExpenseList } from "../axios/expenseApi";
 import { useMutation, useQueryClient, useQuery } from "@tanstack/react-query";
@@ -78,7 +78,7 @@ const Addform = () => {
     setError(newError);
 
     if (Object.keys(newError).length > 0) {
-      const errorMessage = Object.values(newError)
+      const errorMessage = Object.values(newError);
       notifyError(errorMessage);
       return true;
     }

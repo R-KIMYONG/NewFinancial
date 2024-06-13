@@ -1,8 +1,9 @@
 import "./App.css";
-import { GlobalStyle } from "@/styledComponents/GlobalStyle.jsx";
+
 import SharedRouter from "./routes/AuthProvider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { GlobalStyle } from "./StyledComponents/GlobalStyle";
 
 function App() {
   return (

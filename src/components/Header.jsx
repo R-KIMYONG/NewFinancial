@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from "react";
-import * as S from "../StyledComponents/Header.jsx";
-import logo from "./../assets/logo.png";
-import no_img from "./../assets/no_img.jpg";
+import * as S from "../StyledComponents/Header.styled"
+import logo from "../assets/logo.png";
+import no_img from "../assets/no_img.jpg";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "./../redux/slices/authSlice.js";
-import { customStyles } from "./../styles/modalStyles.js";
-import { Modallogout } from "../StyledComponents/Modallogout.jsx";
-import { authApi } from "./../axios/authApi.js";
-import { Modaledit } from "../StyledComponents/Modaledit.jsx";
-import { updateUserInfo } from "./../redux/slices/userSlice.js";
-import { notifySuccess } from "./../util/toast.js";
-
+import { logout } from "../redux/slices/authSlice";
+import { customStyles } from "../styles/modalStyles";
+import { Modallogout } from "../StyledComponents/Modallogout";
+import { authApi } from "../axios/authApi";
+import { Modaledit } from "../StyledComponents/Modaledit.styled";
+import { updateUserInfo } from "../redux/slices/userSlice";
+import { notifySuccess } from "../util/toast";
 Modal.setAppElement("#root");
-
 const Header = () => {
   const userInfo = useSelector((state) => state.user);
   const [logoutConfirmModal, setLogoutConfirmModal] = useState(false);

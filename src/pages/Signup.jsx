@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { authApi } from "./../axios/authApi.js";
+import { authApi } from "../axios/authApi";
+import * as S from "../StyledComponents/LoginSignin.styled";
 import { useSelector } from "react-redux";
 import { notifyError, notifySuccess } from "./../util/toast.js";
 import { Loginsignup } from "../StyledComponents/Loginsignin.jsx";
-
-
 const Signup = () => {
   const [userId, setUserId] = useState("");
   const [userPassWord, setUserPassword] = useState("");

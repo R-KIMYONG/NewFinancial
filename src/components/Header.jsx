@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import * as S from "../styledComponents/Header.styled";
+import * as S from "../styledComponents/Header";
 import logo from "../assets/logo.png";
 import no_img from "../assets/no_img.jpg";
 import { Link } from "react-router-dom";
@@ -9,7 +9,7 @@ import { logout } from "../redux/slices/authSlice";
 import { customStyles } from "../styles/modalStyles";
 import { Modallogout } from "../styledComponents/Modallogout";
 import { authApi } from "../axios/authApi";
-import { Modaledit } from "../styledComponents/Modaledit.styled";
+import { Modaledit } from "../styledComponents/Modaledit";
 import { updateUserInfo } from "../redux/slices/userSlice";
 import { notifySuccess } from "../util/toast";
 

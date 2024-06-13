@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <>
-      <ToastContainer autoClose={2000}/>
+      <ToastContainer autoClose={1500}/>
       <SharedRouter />
       <GlobalStyle />
       {/* <BrowserRouter>

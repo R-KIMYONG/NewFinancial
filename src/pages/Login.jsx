@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { authApi } from "../axios/authApi";
-import { userLogin } from "../redux/slices/userSlice";
+import { login } from "../redux/slices/authSlice";
 import * as S from "@/styledComponents/LoginSignin.styled";
 import { toast } from "react-toastify";
+import { setUserInfo } from "../redux/slices/userSlice";
 
 const Login = () => {
   const [userId, setUserId] = useState("");
@@ -18,24 +19,28 @@ const Login = () => {
     });
   };
 
+  const { isAuthenticated } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/");
+    }
+  }, [isAuthenticated, navigate]);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await authApi.post("/login", {
-        id: userId,
-        password: userPassword,
-      });
-      const data = response.data;
-      if (data.success) {
-        dispatch(userLogin(data.accessToken));
-        notify(data.message);
-        navigate("/");
-      } else {
-        // alert("Login failed");
-        notify("Login failed");
-      }
-    } catch (error) {
-      notify(error);
+
+    const { data } = await authApi.post("/login?expiresIn=60m", {
+      id: userId,
+      password: userPassword,
+    });
+    if (data.success) {
+      dispatch(login(data.accessToken));
+      dispatch(setUserInfo(data));
+      notify(data.message);
+      navigate("/");
+    } else {
+      notify("Login failed");
     }
   };
   return (
@@ -57,7 +62,7 @@ const Login = () => {
           <label>비밀번호: </label>
           <input
             type="password"
-            placeholder="비밀번호를 입력하시오"
+            placeholder="비밀번호를 입력하시오( 4자리 이상 )"
             value={userPassword}
             onChange={(e) => {
               setUserPassword(e.target.value);
@@ -68,7 +73,7 @@ const Login = () => {
       </form>
       <div className="signup">
         <p>
-          아직 우리 식구 아니란 말인가? <Link to="/signup">회원가입</Link>
+          아직 우리 식구 아니란 말인가? <Link to="signup">회원가입</Link>
         </p>
       </div>
     </S.LoginSignup>

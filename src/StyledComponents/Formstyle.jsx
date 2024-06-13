@@ -10,6 +10,7 @@ export const Fromsubmit = styled.form`
   margin-top: 20px;
   border-radius: 10px;
   align-items: flex-end;
+  margin-top:85px;
 `;
 
 export const Formdiv = styled.div`

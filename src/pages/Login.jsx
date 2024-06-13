@@ -6,7 +6,7 @@ import { authApi } from "../axios/authApi";
 import { login } from "../redux/slices/authSlice";
 import * as S from "../StyledComponents/LoginSignin.styled";
 import { toast } from "react-toastify";
-import { setUserInfo } from "../redux/slices/userSlice";
+import { setUserInfo } from "./../redux/slices/userSlice.js";
 
 const Login = () => {
   const [userId, setUserId] = useState("");
@@ -44,7 +44,7 @@ const Login = () => {
     }
   };
   return (
-    <S.LoginSignup>
+    <Loginsignup>
       <h1>Welcome</h1>
       <form onSubmit={handleSubmit}>
         <div>
@@ -76,7 +76,7 @@ const Login = () => {
           아직 우리 식구 아니란 말인가? <Link to="signup">회원가입</Link>
         </p>
       </div>
-    </S.LoginSignup>
+    </Loginsignup>
   );
 };
 

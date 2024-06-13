@@ -2,7 +2,7 @@ import * as S from "../StyledComponents/Expenditurestyle";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { getExpenseList } from "../axios/expenseApi";
+import { getExpenseList } from "./../axios/expenseApi.js";
 
 const ExpenditureItem = () => {
   const activeIndex = useSelector((state) => state.activeIndex);

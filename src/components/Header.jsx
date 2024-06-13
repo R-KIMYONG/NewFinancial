@@ -12,9 +12,7 @@ import { authApi } from "../axios/authApi";
 import { Modaledit } from "../StyledComponents/Modaledit.styled";
 import { updateUserInfo } from "../redux/slices/userSlice";
 import { notifySuccess } from "../util/toast";
-
 Modal.setAppElement("#root");
-
 const Header = () => {
   const userInfo = useSelector((state) => state.user);
   const [logoutConfirmModal, setLogoutConfirmModal] = useState(false);

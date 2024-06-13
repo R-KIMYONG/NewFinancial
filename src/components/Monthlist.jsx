@@ -3,13 +3,12 @@ import * as S from "../StyledComponents/Monthstyle";
 import Totalex from "@components/Totalex.jsx";
 import ExpenditureItem from "@components/ExpenditureItem.jsx";
 import { useDispatch, useSelector } from "react-redux";
-import { setActiveIndex } from "../redux/slices/activeIndexSlice";
-
+import { setActiveIndex } from "./../redux/slices/activeIndexSlice.js";
 const Monthlist = ({ setInputs }) => {
   const activeIndex = useSelector((state) => state.activeIndex);
   const dispatch = useDispatch();
   //안쓰는값은 _으로 대체함 1~12까지의 array를 생성함
-  const months = Array.from({ length: 12 }, (_, index) => index + 1); 
+  const months = Array.from({ length: 12 }, (_, index) => index + 1);
 
   const handleClickMonthTap = (index) => {
     const clickedMonth = `2024-${String(index + 1).padStart(2, "0")}-01`;

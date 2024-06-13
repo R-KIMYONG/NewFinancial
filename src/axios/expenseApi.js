@@ -4,6 +4,7 @@ export const expensesApi = axios.create({
   baseURL: "https://chlorinated-wax-wisteria.glitch.me/",
 });
 
+
 export const getExpenseList = async () => {
   try {
     const { data } = await expensesApi.get("expenses");

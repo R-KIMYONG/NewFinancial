@@ -4,7 +4,7 @@ import TotalexLi from "@components/TotalexLi.jsx";
 import TotalGraph from "@components/TotalGraph.jsx";
 import { useSelector } from "react-redux";
 import { useQuery } from "@tanstack/react-query";
-import { getExpenseList } from "../axios/expenseApi";
+import { getExpenseList } from "./../axios/expenseApi.js";
 import { toast } from "react-toastify";
 const Totalex = () => {
   const activeIndex = useSelector((state) => state.activeIndex);

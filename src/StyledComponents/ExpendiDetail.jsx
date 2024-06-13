@@ -16,7 +16,7 @@ export const DetailDiv = styled.div`
   & > h2{text-align:center;font-size:40px;}
   & > .detail-input {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
   }
   & > .detail-input > label {
     font-size:20px;

@@ -62,7 +62,9 @@ const Header = () => {
           Authorization: `Bearer ${token}`,
         },
       });
-      dispatch(updateUserInfo({ newAvatar, nickname }));
+      const newAvatar = data.avatar
+      
+      dispatch(updateUserInfo({newAvatar, nickname}));
       // localStorage.setItem("userInfo", JSON.stringify(data));
       closeModal();
       notifySuccess("변경 완료");

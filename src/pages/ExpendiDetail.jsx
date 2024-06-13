@@ -60,7 +60,7 @@ const ExpendiDetail = () => {
         }
         const updateExpense = {
           id,
-          createdBy: userInfo.id,
+          createdBy: userInfo.userId,
           date: dateRef.current.value,
           category: categoryRef.current.value,
           amount: amountRef.current.value,

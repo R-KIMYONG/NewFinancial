@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-// import reset from "styled-reset";
+import reset from "styled-reset";
 export const GlobalStyle = createGlobalStyle`
-  /* ${reset} */
+  ${reset}
   body{
     
     font-family: "Jua", sans-serif;

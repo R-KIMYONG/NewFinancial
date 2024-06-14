@@ -19,6 +19,7 @@ const Header = () => {
   const [editProfileModal, setEditProfileModal] = useState(false);
   const [avatarFile, setAvatarFile] = useState("");
   const [nickname, setNickname] = useState("");
+  const [avatarPreview, setAvatarPreview] = useState("");
   const [scrolled, setScrolled] = useState(false);
   const dispatch = useDispatch();
   const openModal = () => {
@@ -31,12 +32,14 @@ const Header = () => {
     setEditProfileModal(true);
     setNickname(userInfo && userInfo.nickname);
     setAvatarFile(null);
+    setAvatarPreview("");
     document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
     setLogoutConfirmModal(false);
     setEditProfileModal(false);
+    setAvatarPreview("");
     document.body.style.overflow = "auto";
   };
 
@@ -44,6 +47,20 @@ const Header = () => {
     dispatch(logout());
     closeModal();
   };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setAvatarFile(file);
+
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setAvatarPreview(reader.result);
+    };
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  };
+
   const upLoadAvatarsBtn = async (e) => {
     e.preventDefault();
     try {
@@ -62,9 +79,9 @@ const Header = () => {
           Authorization: `Bearer ${token}`,
         },
       });
-      const newAvatar = data.avatar
-      
-      dispatch(updateUserInfo({newAvatar, nickname}));
+      const newAvatar = data.avatar;
+
+      dispatch(updateUserInfo({ newAvatar, nickname }));
       // localStorage.setItem("userInfo", JSON.stringify(data));
       closeModal();
       notifySuccess("변경 완료");
@@ -72,7 +89,7 @@ const Header = () => {
       console.log("error=>", error);
     }
   };
-
+  console.log(avatarFile);
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 0);
@@ -126,18 +143,15 @@ const Header = () => {
           <form onSubmit={upLoadAvatarsBtn}>
             <div className="imgPreview">
               <div>
-                <img src={userInfo.avatar || no_img} alt="no_img" />
+                <img
+                  src={avatarPreview || userInfo.avatar || no_img}
+                  alt="no_img"
+                />
               </div>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={(e) => {
-                  setAvatarFile(e.target.files[0]);
-                }}
-              />
+              <input type="file" accept="image/*" onChange={handleFileChange} />
             </div>
             <div className="userExistingInfo">
-              <h3>아이디 : {userInfo && userInfo.id}</h3>
+              <h3>아이디 : {userInfo && userInfo.userId}</h3>
               <p>닉네임 : {userInfo && userInfo.nickname}님</p>
             </div>
             <div className="changeUserNickname">

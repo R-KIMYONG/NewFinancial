@@ -22,6 +22,9 @@
 
 ## 🛠️ 기술스택
 ---
+<br>
+
+<div align='center'>
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
 <img src="https://img.shields.io/badge/css3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
 <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white">
@@ -32,18 +35,27 @@
 <img src="https://img.shields.io/badge/vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
 <img src="https://img.shields.io/badge/glitch-3333FF?style=for-the-badge&logo=glitch&logoColor=white">
 <img src="https://img.shields.io/badge/visualstudiocode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white">
+</div>
 
----
+<br>
+
+
+
 ## ⚙️ 채택한 개발 기술
 ---
+
 - **Front-end**: React, styled-components,React-modal, React-toastify
 - **Back-end**: REST API, JSON Server(Glich통해 배포)
 - **버전 및 이슈 관리**: Github
 - **서비스 배포 환경**: Vercel
 - [**커밋 컨벤션**](https://teamsparta.notion.site/Github-Rules-35366b3e27a941f496600797a3196c9f)을 참고하세요.
 
+----
+<br>
+
 ## 🪜 프로젝트 구조
 ---
+```
 project-root/
 ├── README.md
 ├── package.json
@@ -104,6 +116,8 @@ project-root/
 │   ├── db.json
 │   └── ...
 └── vercel.json
+```
+
 ## 📔 기능 소개
 ---
 **회원가입 및 로그인**: 간편하고 빠르게 회원가입을 할 수 있으며, 기존 회원은 로그인 후 자신의 데이터를 관리할 수 있습니다.
